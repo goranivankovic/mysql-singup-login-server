@@ -1,0 +1,82 @@
+
+ create table Korisnici(
+  id int NOT NULL auto_increment,
+cardId varchar(100) NOT NULL UNIQUE,
+name varchar(100) NOT NULL UNIQUE,
+lastName  varchar(100),
+gender varchar(100),
+position varchar(100),
+yearsActive varchar(100),
+joinDate DATETIME,
+paycheck varchar(100),
+overTime int,
+role varchar(50),
+
+ startTime JSON DEFAULT NULL,
+ endTime JSON DEFAULT NULL,
+ startPause JSON DEFAULT NULL,
+ endPause JSON DEFAULT NULL,
+
+ startTrue BOOLEAN,
+ puseStartTrue BOOLEAN,
+ puseEndTrue BOOLEAN,
+
+
+primary key(id)
+
+)
+
+
+
+
+
+insert into Korisnici(cardId,name,lastName,gender,
+position,yearsActive,joinDate ,paycheck,overTime ,role ,startTime,endTime,startPause,endPause,
+startTrue,puseStartTrue,puseEndTrue
+
+
+)
+values ('111111','Maja','Ivankovic','Female','Office','2017',now(),'65000',400,'Worker',
+'[""]', '[""]','[""]', '[""]',true,false,false
+)
+
+
+startTime znaci da hoces ostavis sve trenutne podatke 
+$ znak oznacava put na primer da imas u tom aray name.data
+2222 oznacava  koji hoces value da dodas arraye
+                                            
+UPDATE korisnici SET  startTime=JSON_ARRAY_APPEND(startTime, '$', '2222') 
+WHERE cardId='222222'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    lastName VARCHAR(15) NOT NULL,
+    password VARCHAR(255) NOT NULL UNIQUE,
+    role varchar (50) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+INSERT INTO admin(name,lastName,password,role)values('Maja123','Ivankovic','654321','super')
+
+
+
+
+

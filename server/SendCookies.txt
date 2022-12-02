@@ -1,0 +1,13 @@
+// res.cookie('jwt',{all:[newUser.user,newUser.password]},{ httpOnly:true  ,maxAge:700000 , domain:'https://goga-login.herokuapp.com/'}).json({msg:newUser})
+
+
+    var username = req.cookies['username'];
+    if (username) {
+ 
+   return next()
+
+    
+    }
+
+
+  return res.send('no coockie')
